@@ -1,15 +1,21 @@
 # ziwu0742_9103_IndividualFinalProject
 
 ## Individual Work Overview
-For this individual work, I chose to apply the coding skills I acquired in this course to make certain elements of the artwork interactive, allowing them to _respond_ to different types of timing events
-### Header 3
+For this individual work, I chose to apply the coding skills I acquired in this course to make certain elements of the artwork interactive. I chose timed events to drive my individual code. 
+
+### Top Layer
+
+Using `setInterval()` to achieve random color changes in the top layer, and applying `lerp()` to create vertical movement for the triangle and one of the quadrilaterals. The trigger is set to automated, and the shape's size updates every 60 frames.
+
+### Middle Layer
+
+I used `setTimeout()` to make the rectangle in the middle layer gradually disappear 2.5 seconds after the page opens, emphasizing the concept of negative space in the original artwork. 
+
+### Base Layer 
+For the lines at the base, I added a `movementOffset` parameter along with sin() and cos() oscillation effects to keep the visuals dynamic.
+
 
 Instructions on how to interact with the work; e.g. move the mouse slowly over the screen, click the play button and wait for the music to start, load the page and the animation will happen over x number of seconds or whatever is needed to make your code come alive.
 Details of your individual approach to animating the group code.
-Which did you choose to drive your individual code: audio, interaction, Perlin noise or time.
-Which properties of the image will be animated and how; highlighting how it is unique from other group members (i.e. one changes colours, the other component sizes, another reveals only some components at a time, etc.). You will need to work with your group members to make sure your work is sufficiently different from each other.
-References to inspiration for animating your individual code; these can be images (still or gifs). How did they influence your submission?
-A short technical explanation of how your individual code works to animate the image and any appropriate references.
-If you made a lot of changes to the group code, explain it here.
-If you use tools and technique from outside the course, explain why you used them and how they work.
-If you copy a technique from the Internet, explain how it works, why you used it, and where it came from.
+
+## Reference
