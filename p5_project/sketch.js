@@ -3,8 +3,10 @@ let groups = [];
 let colorMiddle; // Color for the middle layer.
 let colorTop; // Color variable for the top layer
 let fadeAlphaMiddle = 255; // Initial alpha for middle layer color
+let fadeAlphaTop = 255; // Initial alpha for Top layer color
 let triangleSize;
 let targetTriangleSize;
+
 
 // Set the easing value to a constant
 const easing = 0.2;
@@ -14,32 +16,44 @@ function setup() {
   background(255);
   
   colorMiddle = color(random(145, 188), 145, 188, fadeAlphaMiddle);
-  colorTop = color(random(188, 255), 188, 255, 150);
+  colorTop = color(random(188, 255), 188, 255, fadeAlphaTop);
   colorBase = color(random(98, 126), 98, 126); // Base color without fade
 
   drawLineGroups(); // Initial draw of the base layer
   
   setInterval(colorTopChange, 1000); // Start the color change effect for the top layer every 1 second
   setTimeout(fadeOutMiddleLayer, 2500);  // Start the fade-out effect for the middle layer after a delay
+  setTimeout(fadeOutTopLayer, 3000);
 
   triangleSize = random(height);
   targetTriangleSize = triangleSize / 2;
 }
 
 function colorTopChange() {
-  colorTop = color(random(188, 255), random(255), random(255), 150);
+  colorTop = color(random(188, 255), random(255), random(255), fadeAlphaTop);
 }
 
 function fadeOutMiddleLayer() {
   if (fadeAlphaMiddle > 0) {
 	fadeAlphaMiddle -= 5;
 	fadeAlphaMiddle = max(fadeAlphaMiddle, 0); // Ensure alpha does not go below 0
-	
-	  // Update colorMiddle with the new alpha value
-	colorMiddle = color(red(colorMiddle), green(colorMiddle), blue(colorMiddle), fadeAlphaMiddle); 
+  
+  colorMiddle = color(red(colorMiddle), green(colorMiddle), blue(colorMiddle), fadeAlphaMiddle);
+  setTimeout(fadeOutMiddleLayer, 50); // Adjust delay for fade speed
+  }
+}	
+
+  function fadeOutTopLayer() {
+    if (fadeAlphaTop > 0) {
+    fadeAlphaTop -= 1.5;
+    fadeAlphaTop = max(fadeAlphaTop, 0); 
+  
+
+	colorTop = color(red(colorTop), green(colorTop), blue(colorTop), fadeAlphaTop); 
+  stroke(170, fadeAlphaTop);
 	
 	// Schedule the next fade step
-	setTimeout(fadeOutMiddleLayer, 50); // Adjust delay for fade speed
+	setTimeout(fadeOutTopLayer, 50); // Adjust delay for fade speed
   }
 }
 //This class draws groups of lines using a class.
@@ -113,9 +127,9 @@ function drawLineGroups() {
   let baseLayer3EndY = 0.285 * windowHeight;
   let baseLayer3Angle = PI / 6.78; 
 
-  groups.push(new lineGroup(baseLayer1StartX, baseLayer1StartY, baseLayer1EndX, baseLayer1EndY, baseLayer1Angle, 3, colorBase, 10, 3, 0.1));
-  groups.push(new lineGroup(baseLayer2StartX, baseLayer2StartY, baseLayer2EndX, baseLayer2EndY, baseLayer2Angle, 3, colorBase, 10, 3, 0.2));
-  groups.push(new lineGroup(baseLayer3StartX, baseLayer3StartY, baseLayer3EndX, baseLayer3EndY, baseLayer3Angle, 10, colorBase, 5, 3, 0.3));
+  groups.push(new lineGroup(baseLayer1StartX, baseLayer1StartY, baseLayer1EndX, baseLayer1EndY, baseLayer1Angle, 10, colorBase, 10, 3, 0.1));
+  groups.push(new lineGroup(baseLayer2StartX, baseLayer2StartY, baseLayer2EndX, baseLayer2EndY, baseLayer2Angle, 10, colorBase, 10, 3, 0.2));
+  groups.push(new lineGroup(baseLayer3StartX, baseLayer3StartY, baseLayer3EndX, baseLayer3EndY, baseLayer3Angle, 40, colorBase, 5, 3, 0.3));
 }
 
 function drawMiddleLayer() {
@@ -137,9 +151,9 @@ function drawTopLayer() {
   let topLayer1Y2 = 0.711 * windowHeight;
   let topLayer1Y3 = 0.919 * windowHeight; 
 
-  fill(colorTop, 20, 20); 
-  stroke(170);
-  strokeWeight(2);
+  fill(colorTop); 
+  stroke(170, fadeAlphaTop);
+  strokeWeight(1.5);
 
   if (frameCount % 60 == 0) {
 	targetTriangleSize = random(height / 2);
@@ -173,7 +187,8 @@ function drawTopLayer() {
   let topLayer3Y4 = 0.403 * windowHeight;
   quad(topLayer3X1, topLayer3Y1, topLayer3X2, topLayer3Y2, topLayer3X3, topLayer3Y3, topLayer3X4, topLayer3Y4);
 }
-  
+
+
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
   drawLineGroups();
