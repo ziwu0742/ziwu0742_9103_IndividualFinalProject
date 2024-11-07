@@ -3,6 +3,8 @@
 ## Individual Work Overview
 For this individual work, I chose to apply the coding skills I acquired in this course to make certain elements of the artwork interactive. I chose timed events to drive my individual code. 
 
+The overall concept I want to create is a sense of visual subtraction. Objects gradually disappear, emphasizing a sense of mental emptiness. The disappearance starts with the negative space, followed by the shapes on the top layer, and ultimately leaving only the lines behind. 
+
 ### Top Layer
 
 Using `setInterval()` to achieve random color changes in the top layer, and applying `lerp()` to create vertical movement for the triangle and one of the quadrilaterals. The trigger is set to automated, and the shape's size updates every 60 frames.
@@ -14,9 +16,7 @@ I used `setTimeout()` to make the rectangle in the middle layer gradually disapp
 ### Base Layer 
 For the lines at the base, I added a `movementOffset` parameter along with sin() and cos() oscillation effects to keep the visuals dynamic.
 
-
-Instructions on how to interact with the work; e.g. move the mouse slowly over the screen, click the play button and wait for the music to start, load the page and the animation will happen over x number of seconds or whatever is needed to make your code come alive.
-Details of your individual approach to animating the group code. 
+use `lerp()` to make the number of lines increase with smooth easing effects, use `setTimeout()` to make it happen at last. 
 
 ## Instruction 
 Run the code, the artwork changes gradually over time. 

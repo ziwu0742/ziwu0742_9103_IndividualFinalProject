@@ -11,6 +11,9 @@ let targetTriangleSize;
 // Set the easing value to a constant
 const easing = 0.2;
 
+let targetNumLines = 10; // Target number of lines for group2
+let lerpNumLines = 10;
+
 function setup() {
   createCanvas(windowWidth, windowHeight);
   background(255);
@@ -27,6 +30,11 @@ function setup() {
 
   triangleSize = random(height);
   targetTriangleSize = triangleSize / 2;
+
+  setTimeout(() => {
+    // Find the second line group and update its numLines to 50
+     targetNumLines = 80;
+  }, 10000); // Change after 10 seconds
 }
 
 function colorTopChange() {
@@ -45,7 +53,7 @@ function fadeOutMiddleLayer() {
 
   function fadeOutTopLayer() {
     if (fadeAlphaTop > 0) {
-    fadeAlphaTop -= 1.5;
+    fadeAlphaTop -= 2;
     fadeAlphaTop = max(fadeAlphaTop, 0); 
   
 
@@ -102,6 +110,12 @@ function draw() {
 	group.draw();
   }
 
+  // Smoothly update the number of lines for group2 using lerp
+  if (groups[2]) {
+    // Linearly interpolate numLines towards targetNumLines
+    groups[2].numLines = lerp(groups[2].numLines, targetNumLines, 0.03);
+  }
+  
   drawMiddleLayer(); // Draw middle layer with fading color
   drawTopLayer(); // Draw top layer
 }
@@ -127,9 +141,9 @@ function drawLineGroups() {
   let baseLayer3EndY = 0.285 * windowHeight;
   let baseLayer3Angle = PI / 6.78; 
 
-  groups.push(new lineGroup(baseLayer1StartX, baseLayer1StartY, baseLayer1EndX, baseLayer1EndY, baseLayer1Angle, 10, colorBase, 10, 3, 0.1));
-  groups.push(new lineGroup(baseLayer2StartX, baseLayer2StartY, baseLayer2EndX, baseLayer2EndY, baseLayer2Angle, 10, colorBase, 10, 3, 0.2));
-  groups.push(new lineGroup(baseLayer3StartX, baseLayer3StartY, baseLayer3EndX, baseLayer3EndY, baseLayer3Angle, 40, colorBase, 5, 3, 0.3));
+  groups.push(new lineGroup(baseLayer1StartX, baseLayer1StartY, baseLayer1EndX, baseLayer1EndY, baseLayer1Angle, 3, colorBase, 10, 3, 0.1));
+  groups.push(new lineGroup(baseLayer2StartX, baseLayer2StartY, baseLayer2EndX, baseLayer2EndY, baseLayer2Angle, 3, colorBase, 10, 3, 0.2));
+  groups.push(new lineGroup(baseLayer3StartX, baseLayer3StartY, baseLayer3EndX, baseLayer3EndY, baseLayer3Angle, 10, colorBase, 5, 3, 0.3));
 }
 
 function drawMiddleLayer() {
