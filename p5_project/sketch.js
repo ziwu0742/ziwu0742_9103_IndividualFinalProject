@@ -7,14 +7,14 @@ let triangleSize;
 let targetTriangleSize;
 
 // Set the easing value to a constant
-const easing = 0.05;
+const easing = 0.2;
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
   background(255);
   
   colorMiddle = color(random(145, 188), 145, 188, fadeAlphaMiddle);
-  colorTop = color(random(188, 255), 188, 255);
+  colorTop = color(random(188, 255), 188, 255, 150);
   colorBase = color(random(98, 126), 98, 126); // Base color without fade
 
   drawLineGroups(); // Initial draw of the base layer
@@ -27,7 +27,7 @@ function setup() {
 }
 
 function colorTopChange() {
-  colorTop = color(random(188, 255), random(255), random(255));
+  colorTop = color(random(188, 255), random(255), random(255), 150);
 }
 
 function fadeOutMiddleLayer() {
@@ -82,7 +82,7 @@ class lineGroup {
 }
 
 function draw() {
-  background(50);
+  background(10);
 
   for (let group of groups) {
 	group.draw();
@@ -140,7 +140,7 @@ function drawTopLayer() {
   fill(colorTop, 20, 20); 
   stroke(170);
   strokeWeight(2);
-  
+
   if (frameCount % 60 == 0) {
 	targetTriangleSize = random(height / 2);
   }
@@ -149,6 +149,7 @@ function drawTopLayer() {
   // last triangle size drawn and the target triangle size that gets updated
   // every 60 frames
   triangleSize = lerp(triangleSize, targetTriangleSize, easing);
+ 
 
   triangle(topLayer1X1, triangleSize, topLayer1X2, topLayer1Y2, topLayer1X3, topLayer1Y3);
 
