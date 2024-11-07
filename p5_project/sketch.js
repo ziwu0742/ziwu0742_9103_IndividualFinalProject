@@ -9,7 +9,7 @@ let targetTriangleSize;
 
 
 // Set the easing value to a constant
-const easing = 0.2;
+const easing = 0.05;
 
 let targetNumLines = 10; // Target number of lines for group2
 let lerpNumLines = 10;
