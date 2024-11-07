@@ -16,9 +16,18 @@ For the lines at the base, I added a `movementOffset` parameter along with sin()
 
 
 Instructions on how to interact with the work; e.g. move the mouse slowly over the screen, click the play button and wait for the music to start, load the page and the animation will happen over x number of seconds or whatever is needed to make your code come alive.
-Details of your individual approach to animating the group code.
+Details of your individual approach to animating the group code. 
+
+## Instruction 
+Run the code, the artwork changes gradually over time. 
 
 ## Reference
+<<<<<<< HEAD
 Technique from tutorial 9 of IDEA 9103 easing-illustration-intro
 
 Window: setTimeout() method - Web APIs | MDN. (2024, October 16). MDN Web Docs. https://developer.mozilla.org/en-US/docs/Web/API/Window/setTimeout
+=======
+Technique from tutorial 9 of IDEA 9103 ![easing-illustration-intro](https://github.com/user-attachments/assets/61ed5157-1ef3-4ccc-bba6-e3737b1c7d83) 
+
+Window: setTimeout() method - Web APIs | MDN. (2024, October 16). MDN Web Docs. https://developer.mozilla.org/en-US/docs/Web/API/Window/setTimeout 
+>>>>>>> a9b7f8c8455f22a806d958701f9db6c709780e41
