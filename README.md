@@ -22,6 +22,9 @@ Details of your individual approach to animating the group code.
 Run the code, the artwork changes gradually over time. 
 
 ## Reference
+
 Technique from tutorial 9 of IDEA 9103 ![easing-illustration-intro](https://github.com/user-attachments/assets/61ed5157-1ef3-4ccc-bba6-e3737b1c7d83) 
+
+sin. (n.d.). https://p5js.org/reference/p5/sin/
 
 Window: setTimeout() method - Web APIs | MDN. (2024, October 16). MDN Web Docs. https://developer.mozilla.org/en-US/docs/Web/API/Window/setTimeout 
