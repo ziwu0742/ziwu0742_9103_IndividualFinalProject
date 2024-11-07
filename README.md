@@ -29,7 +29,7 @@ Using `setInterval()` to achieve random color changes in the top layer, and appl
 The alpha of the top layer shapes will gradually dim until they are completely invisible. 
 
 ### Base Layer 
-For the lines at the base, I added a `movementOffset` parameter along with sin() and cos() oscillation effects to keep the visuals dynamic.
+For the lines at the base, I added a `movementOffset` parameter along with `sin()` and `cos()` oscillation effects to keep the visuals dynamic.
 
 use `lerp()` to make the number of lines increase with smooth easing effects, use `setTimeout()` to make it happen at last. 
 
