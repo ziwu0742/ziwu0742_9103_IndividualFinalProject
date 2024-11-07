@@ -166,8 +166,8 @@ function drawTopLayer() {
   let topLayer1Y3 = 0.919 * windowHeight; 
 
   fill(colorTop); 
-  stroke(170, fadeAlphaTop);
-  strokeWeight(1.5);
+  stroke(230, fadeAlphaTop);
+  strokeWeight(2);
 
   if (frameCount % 60 == 0) {
 	targetTriangleSize = random(height / 2);
