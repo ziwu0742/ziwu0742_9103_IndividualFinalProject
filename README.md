@@ -1,7 +1,7 @@
 # ziwu0742_9103_IndividualFinalProject
 
 ## Inspirations
-![631ba6fba408801430e4b61c_Screen Shot 2022-09-09 at 21 49 18](https://github.com/user-attachments/assets/be5200e4-e40c-4d3a-8e2b-f8081c3017d5)
+![631ba6fba408801430e4b61c_Screen Shot 2022-09-09 at 21 49 18](https://github.com/user-attachments/assets/be5200e4-e40c-4d3a-8e2b-f8081c3017d5) 
 Manfred Mohr, P3010_5, 2020-21. Courtesy of bitforms gallery
 ![p511d](https://github.com/user-attachments/assets/8128fe6f-0c45-4c2a-99ed-e6a2f758f31a)
 Manfred Mohr, P-511/D
