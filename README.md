@@ -19,3 +19,6 @@ Instructions on how to interact with the work; e.g. move the mouse slowly over t
 Details of your individual approach to animating the group code.
 
 ## Reference
+Technique from tutorial 9 of IDEA 9103 easing-illustration-intro
+
+Window: setTimeout() method - Web APIs | MDN. (2024, October 16). MDN Web Docs. https://developer.mozilla.org/en-US/docs/Web/API/Window/setTimeout
